@@ -1,0 +1,31 @@
+.tech-container{
+    margin-top:7%;
+    height:auto;
+}
+
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.slide-track {
+  display: inline-flex;
+  animation: scroll 15s linear infinite;
+  gap: 2rem;
+}
+
+.slide-track h3 {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
