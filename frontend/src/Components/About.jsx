@@ -3,7 +3,7 @@ import "./css/About.css"
 
 function About({data}) {
   return (
-    <div className="container about-container ">
+    <div className="container about-container " id='about'>
       <div className="row">
         <div className="col-md-6 col-lg-6 col-sm-6 col-12">    
             <p className="fs-1 fw-bolder m-0">Hi👋,</p>

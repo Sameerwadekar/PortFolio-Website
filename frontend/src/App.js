@@ -1,8 +1,8 @@
-import './App.css';
+
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Admin from './Components/Admin';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AboutData from './Components/AboutData';
 import About from './Components/About';
 import TechStack from './Components/TechStack';
@@ -10,12 +10,16 @@ import Projects from './Components/Projects';
 import ProjectData from './Components/ProjectData';
 import TechStackData from './Components/TechStackData';
 import Contact from './Components/Contact';
+import Footer from './Components/Footer'
+import { ThemeContext} from './Components/themeContext';
 
 function App() {
   const [navbarInfo, setnavbarInfo] = useState({})
   const [aboutInfo, setaboutInfo] = useState({})
   const [savedProject, setSavedProject] = useState([])
   const [techStack, settechStack] = useState([])
+
+  const {darkMode} = useContext(ThemeContext)
 
   useEffect(()=>{
     const NavbarSaved = localStorage.getItem("navbarInfo");
@@ -52,7 +56,7 @@ function App() {
           <TechStack data={techStack}/>
           <Projects projectDetails={savedProject}/>
           <Contact data={navbarInfo}/>
-          <Navbar data={navbarInfo}/>
+          <Footer data={navbarInfo}/>
         </>
       )
     },
@@ -69,10 +73,10 @@ function App() {
     }
   ])
   return (
-    <RouterProvider router={router}/>
+    <div className={darkMode ? "bg-black text-white" : "bg-white text-dark"} style={{ minHeight: "100vh" }}>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
 export default App;
-//https://www.figma.com/design/L4IOfevXrOboajIdDM1xk3/Developer-Portfolio-Design--Community-?node-id=1-4&t=lc2gWA0zYoVo6jE6-0
-//resume dark light mode 

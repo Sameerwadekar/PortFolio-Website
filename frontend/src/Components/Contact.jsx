@@ -18,7 +18,7 @@ function Contact({data}) {
 </svg></a></div>
       </div>
     </div>
-    <hr className='container'/>
+    <hr className='container mb-0'/>
     </>
   )
 }
